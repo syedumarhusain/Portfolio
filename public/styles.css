@@ -1,0 +1,72 @@
+body, html {
+    margin: 0;
+    height: 100vh;
+    color: white;
+    font-size: 24px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 450%;
+    animation: gradientBG 15s ease infinite;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.invisible-navbar {
+    background-color: transparent; /* Navbar is transparent */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed; /* Navbar is fixed at the top of the page */
+    width: 100%;
+    transition: background-color 0.3s;
+    
+}
+
+.invisible-navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.invisible-navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.invisible-navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+/* Change navbar background and link colors on hover */
+.invisible-navbar:hover, .invisible-navbar ul li a:hover {
+    background-color: gradientBG 15s ease infinite;
+    color: #fff;
+}
+
+/* Sections */
+#home{
+    margin-top: 100px;
+}
+#poject,#about,#contact{
+    margin-top: 60px;
+}
+div {
+    height: 400px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
