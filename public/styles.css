@@ -52,21 +52,36 @@ html {
 }
 
 /* Change navbar background and link colors on hover */
-.invisible-navbar:hover, .invisible-navbar ul li a:hover {
+/* .invisible-navbar:hover, .invisible-navbar ul li a:hover {
     background-color: gradientBG 15s ease infinite;
     color: #fff;
-}
+} */
 
 /* Sections */
 #home{
+    
     margin-top: 100px;
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    /* background-color: black; */
+    
+}
+.insta{
+    transition: background-color 0.3s;
+}
+
+.insta:hover {
+    background-color:gradientBG 15s ease infinite;
+    
 }
 #poject,#about,#contact{
     margin-top: 60px;
 }
+
 div {
     height: 400px; 
     padding: 20px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
