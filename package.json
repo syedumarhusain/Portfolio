@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Resume",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedumarhusain/Portfolio.git"
+  },
+  "author": "Syed Umar Husain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syedumarhusain/Portfolio/issues"
+  },
+  "homepage": "https://github.com/syedumarhusain/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}
