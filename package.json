@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "Resume",
   "main": "index.js",
+  "engines": {
+    "node": "20.11.1"
+  },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",

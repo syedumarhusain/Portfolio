@@ -1,14 +1,21 @@
 
 const express = require('express')
+const path = require('path');
 const app = express()
-const port = 3000
+const port = 3001
 
 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/header.html');
-})
+// Handle GET requests to /api route
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server api!" });
+});
+
+// All other GET requests not handled before will return our React app
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
 
 
 app.listen(port, () => {
