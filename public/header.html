@@ -41,11 +41,51 @@
                         </a>  
                         
         </div>
-        <button class="btninfo"><a href="#contact"></a>More info</button>       
+        <div>
+        <a  href="#contact">
+            <button class="btninfo" >More Info</button>
+        </a>
+
+        </div>
+              
     </div>
          
 
-    <div id="about" >About</div>
+    <div id="about" >
+        <h1>About</h1>
+    <div id="contact-placeholder">Loading contact information...</div>
+
+    <script>
+        // JavaScript to fetch and display the contact section from source.html
+        async function loadContactSection() {
+            try {
+                const response = await fetch('about.html');
+                const text = await response.text();
+                
+                // Create a new DOMParser to parse the HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                
+                // Extract the contact section
+                const contactSection = doc.querySelector('#contact');
+                
+                // Insert the contact section into the main document
+                const placeholder = document.getElementById('contact-placeholder');
+                if (contactSection && placeholder) {
+                    placeholder.innerHTML = contactSection.innerHTML;
+                } else {
+                    placeholder.innerHTML = 'Failed to load about information.';
+                }
+            } catch (error) {
+                console.error('Error fetching the contact section:', error);
+                document.getElementById('contact-placeholder').innerHTML = 'Failed to load about information.';
+            }
+        }
+
+        // Load the contact section when the page loads
+        window.addEventListener('DOMContentLoaded', loadContactSection);
+    </script>
+    </div>
     <div id="project">Project</div>
     <div id="contact">Contact </div>
     </div>
