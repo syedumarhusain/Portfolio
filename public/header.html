@@ -127,7 +127,21 @@
 
         displayProjects();
     </script></div>
-    <div id="contact">Contact </div>
+    <div id="contact">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <h2>Contact</h2>
+        <label for="name">Name</label>
+        <input type="hidden" name="access_key" value="2fe8f5c2-a513-4cb6-ad06-5ebc5a5b8475">
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit" class="btnfrm">Send</button>
+    </form> </div>
     </div>
 
 </body>
