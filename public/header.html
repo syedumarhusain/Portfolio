@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syed Umar Husain</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <nav class="invisible-navbar">
@@ -67,7 +68,7 @@
                 const doc = parser.parseFromString(text, 'text/html');
                 
                 // Extract the contact section
-                const contactSection = doc.querySelector('#contact');
+                const contactSection = doc.querySelector('#about');
                 
                 // Insert the contact section into the main document
                 const placeholder = document.getElementById('contact-placeholder');
@@ -86,7 +87,46 @@
         window.addEventListener('DOMContentLoaded', loadContactSection);
     </script>
     </div>
-    <div id="project">Project</div>
+    <div id="project"><header>
+        
+    </header>
+    <main>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div id="project-container"></div>
+        </section>
+    </main>
+    <footer>
+        <p>@ https://github.com/syedumarhusain</p>
+    </footer>
+    <script>
+        const username = 'syedumarhusain';
+        const repoNames = ['drowsiness_detection_project', 'amazon-clone','Portfolio']; // List your repository names here
+
+        function fetchRepoData(repoName) {
+            return fetch(`https://api.github.com/repos/${username}/${repoName}`)
+                .then(response => response.json());
+        }
+
+        function displayProjects() {
+            const projectContainer = document.getElementById('project-container');
+            repoNames.forEach(repo => {
+                fetchRepoData(repo).then(data => {
+                    const projectElement = document.createElement('div');
+                    projectElement.className = 'project';
+                    projectElement.innerHTML = `
+                        <h3>${data.name}</h3>
+                       
+                        <a href="${data.html_url}" target="_blank">View on GitHub</a>
+                        ${data.homepage ? `<a href="${data.homepage}" target="_blank">Live Demo</a>` : ''}
+                    `;
+                    projectContainer.appendChild(projectElement);
+                });
+            });
+        }
+
+        displayProjects();
+    </script></div>
     <div id="contact">Contact </div>
     </div>
 

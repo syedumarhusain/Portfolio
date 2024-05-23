@@ -6,6 +6,9 @@ body, html {
     background-size: 400% 450%;
     animation: gradientBG 15s ease infinite;
     scroll-behavior: smooth;
+    font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  
 }
 
 .invisible-navbar {
@@ -98,7 +101,15 @@ svg {
 
     padding: 20px; 
 }
+#project{
+    background-color: #161616;
+    
+    height: 500px; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.638); 
 
+    padding: 20px;
+}
 /* div {
     
     border: 1px solid #ccc;
